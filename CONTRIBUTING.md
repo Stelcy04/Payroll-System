@@ -10,10 +10,10 @@ Este sistema busca construir una solucion de planilla para pequenas y medianas e
 
 Se recomienda leer primero:
 
-1. [README.md](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\README.md)
-2. [funcional.md](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\docs\funcional.md)
-3. [tecnico.md](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\docs\tecnico.md)
-4. [roadmap.md](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\docs\roadmap.md)
+1. [README.md](README.md)
+2. [funcional.md](funcional.md)
+3. [tecnico.md](tecnico.md)
+4. [roadmap.md](roadmap.md)
 
 ## Tipos de contribucion utiles
 
@@ -29,15 +29,15 @@ Se recomienda leer primero:
 
 - no romper el flujo ya existente de empleados, periodos, salary advances o planillas
 - preferir cambios pequenos y claros
-- documentar cualquier cambio importante en `docs/avance.md`
+- documentar cualquier cambio importante en `avance.md`
 - mantener consistencia entre frontend, backend y documentacion
 - si agregas una regla de negocio, explica por que existe
 
 ## Estructura basica del proyecto
 
-- [backend](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend): API y frontend
-- [docs](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\docs): documentacion
-- [sql](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\sql): modelo SQL base
+- [backend](backend): API y frontend
+- Documentacion: archivos `.md` en la raiz del repositorio
+- [schema_planilla_pymes.sql](schema_planilla_pymes.sql): modelo SQL base
 
 ## Como proponer cambios
 
