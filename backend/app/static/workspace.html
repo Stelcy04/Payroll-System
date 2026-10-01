@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planilla Workspace</title>
+  <link rel="stylesheet" href="/static/workspace.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="eyebrow">Payroll Workspace</span>
+        <h1>Planilla PYMES</h1>
+        <p>Procesos separados, navegación limpia y repositorios por módulo.</p>
+      </div>
+      <nav class="menu">
+        <button class="menu-item active" data-screen="employees">Empleados</button>
+        <button class="menu-item" data-screen="periods">Periodos</button>
+        <button class="menu-item" data-screen="advances">Salary Advances</button>
+        <button class="menu-item" data-screen="payrolls">Planillas</button>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topbar">
+        <div>
+          <span class="eyebrow">Workspace</span>
+          <h2 id="screen-title">Repositorio de empleados</h2>
+          <p id="screen-description">Consulta el repositorio, crea nuevos registros o importa empleados desde Excel.</p>
+        </div>
+      </section>
+
+      <section class="screen active" id="screen-employees">
+        <div class="stack">
+          <article class="panel" id="employees-repository-panel">
+            <div class="panel-head">
+              <div>
+                <h3>Repositorio de empleados</h3>
+                <p class="muted">Todos los registros creados aparecen aquí con acciones rápidas.</p>
+              </div>
+              <div class="actions">
+                <button class="btn primary" id="employees-create-new" type="button">Create New</button>
+                <a class="btn ghost" href="/employees/export.xlsx">Excel</a>
+                <a class="btn ghost" href="/employees/export.pdf">PDF</a>
+                <a class="btn ghost" href="/employees/template">Descargar Excel</a>
+                <label class="btn secondary" for="employees-excel-file">Importar Excel</label>
+                <input id="employees-excel-file" type="file" accept=".xlsx" hidden>
+              </div>
+            </div>
+            <div id="employees-repository"></div>
+          </article>
+
+          <article class="panel hidden" id="employees-create-panel">
+            <div class="panel-head">
+              <div>
+                <h3>Crear empleado</h3>
+                <p class="muted">Subpantalla dedicada al registro individual de empleados.</p>
+              </div>
+              <button class="btn ghost" id="employees-back-to-repository" type="button">Volver al repositorio</button>
+            </div>
+            <form id="employee-form" class="form-grid"></form>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h3>Reporte de contrataciones</h3>
+                <p class="muted">Visualiza empleados creados o contratados por período.</p>
+              </div>
+              <div id="employees-report-toolbar"></div>
+            </div>
+            <div id="employees-report"></div>
+            <div id="employee-excel-status" class="muted"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-periods">
+        <div class="module-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h3>Crear periodo</h3>
+                <p class="muted">Registra períodos abiertos, cerrados o futuros.</p>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="/periods/export.xlsx">Excel</a>
+                <a class="btn ghost" href="/periods/export.pdf">PDF</a>
+              </div>
+            </div>
+            <form id="period-form" class="form-grid compact"></form>
+          </article>
+
+          <div class="stack">
+            <article class="panel">
+              <div class="mini-stats">
+                <div class="mini-card"><strong id="periods-open-count">0</strong><span>Abiertos</span></div>
+                <div class="mini-card"><strong id="periods-closed-count">0</strong><span>Cerrados</span></div>
+                <div class="mini-card"><strong id="periods-future-count">0</strong><span>Futuros</span></div>
+              </div>
+            </article>
+            <article class="panel"><h3>Periodos abiertos</h3><div id="periods-open-table"></div></article>
+            <article class="panel"><h3>Periodos cerrados</h3><div id="periods-closed-table"></div></article>
+            <article class="panel"><h3>Periodos futuros</h3><div id="periods-future-table"></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-advances">
+        <div class="stack">
+          <article class="panel" id="advances-repository-panel">
+            <div class="panel-head">
+              <div>
+                <h3>Repositorio de salary advances</h3>
+                <p class="muted">Todos los adelantos se administran desde este repositorio.</p>
+              </div>
+              <div class="actions">
+                <button class="btn primary" id="advances-create-new" type="button">Create New</button>
+                <a class="btn ghost" href="/salary-advances/export.xlsx">Excel</a>
+                <a class="btn ghost" href="/salary-advances/export.pdf">PDF</a>
+              </div>
+            </div>
+            <div id="advances-repository"></div>
+          </article>
+
+          <article class="panel hidden" id="advances-create-panel">
+            <div class="panel-head">
+              <div>
+                <h3>Registrar salary advance</h3>
+                <p class="muted">Subpantalla dedicada al registro individual de salary advances.</p>
+              </div>
+              <button class="btn ghost" id="advances-back-to-repository" type="button">Volver al repositorio</button>
+            </div>
+            <form id="advance-form" class="form-grid compact"></form>
+          </article>
+
+          <div class="stack">
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3>Reporte de salary advances</h3>
+                  <p class="muted">Consulta la creación mensual o quincenal.</p>
+                </div>
+                <div id="advances-report-toolbar"></div>
+              </div>
+              <div id="advances-report"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-payrolls">
+        <div class="module-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h3>Generar planilla</h3>
+                <p class="muted">Selecciona un periodo abierto y genera su corrida de planilla.</p>
+              </div>
+            </div>
+            <form id="payroll-form" class="form-grid compact"></form>
+          </article>
+
+          <article class="panel">
+            <h3>Repositorio de planillas</h3>
+            <div id="payrolls-repository"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/static/workspace.js"></script>
+</body>
+</html>
