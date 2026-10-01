@@ -11,22 +11,22 @@
 
 ## Ubicaciones clave
 
-- [main.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\main.py): punto de entrada
-- [db.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\db.py): persistencia JSON
-- [employees.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\routers\employees.py): empleados y reportes
-- [periods.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\routers\periods.py): periodos
-- [salary_advances.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\routers\salary_advances.py): salary advances
-- [payroll.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\services\payroll.py): generacion basica de planilla
-- [exports.py](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\services\exports.py): exportacion PDF y Excel
-- [workspace.html](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\static\workspace.html): interfaz modular
-- [workspace.css](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\static\workspace.css): estilos
-- [workspace.js](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\app\static\workspace.js): logica frontend
+- [main.py](backend/app/main.py): punto de entrada
+- [db.py](backend/app/db.py): persistencia JSON
+- [employees.py](backend/app/routers/employees.py): empleados y reportes
+- [periods.py](backend/app/routers/periods.py): periodos
+- [salary_advances.py](backend/app/routers/salary_advances.py): salary advances
+- [payroll.py](backend/app/services/payroll.py): generacion basica de planilla
+- [exports.py](backend/app/services/exports.py): exportacion PDF y Excel
+- [workspace.html](backend/app/static/workspace.html): interfaz modular
+- [workspace.css](backend/app/static/workspace.css): estilos
+- [workspace.js](backend/app/static/workspace.js): logica frontend
 
 ## Persistencia actual
 
 La persistencia de desarrollo vive en:
 
-- [payroll_dev.json](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\backend\data\payroll_dev.json)
+- `backend/data/payroll_dev.json` (se crea automaticamente y no se publica en el repositorio)
 
 Colecciones actuales:
 
@@ -79,7 +79,7 @@ Colecciones actuales:
 
 El proyecto tiene dos niveles de modelo:
 
-- un modelo SQL mas completo y escalable en [schema_planilla_pymes.sql](C:\Users\Villa\OneDrive\Escritorio\VillacodeR\sql\schema_planilla_pymes.sql)
+- un modelo SQL mas completo y escalable en [schema_planilla_pymes.sql](schema_planilla_pymes.sql)
 - una persistencia JSON simple para desarrollo y prototipado rapido
 
 ## Riesgos tecnicos actuales
